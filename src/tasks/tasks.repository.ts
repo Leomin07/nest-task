@@ -1,10 +1,8 @@
 import { EntityRepository, Repository } from 'typeorm';
 import { CreateTaskDto } from './dto/create-task.dto';
-import { Task } from './task.entity';
-import { TaskStatus } from './task-status.enum';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
-import { filter } from 'rxjs';
-
+import { TaskStatus } from './task-status.enum';
+import { Task } from './task.entity';
 @EntityRepository(Task)
 export class TasksRepository extends Repository<Task> {
   async getTasks(filterDto: GetTasksFilterDto): Promise<Task[]> {
